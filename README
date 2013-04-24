@@ -1,6 +1,6 @@
 This is the README file for sysinfo-snapshot
 
-The sysinfo-snapshot command generates a system information snapshot in HTML or text.
+The sysinfo-snapshot command generates a system information snapshot in HTML.
 From command line it will generate the report into file and print out the file name.
 
 The command cgi-bin and generate the system report directly to your browser.
@@ -8,7 +8,66 @@ The command cgi-bin and generate the system report directly to your browser.
 It is a simple bash script customizable, just add your commands or files to the lists and
 they will be part of your next report.
 
-Please send suggestion and updates to Yair Ifergan <yairi@voltaire.com>
+Please send suggestion and updates to Ryan Heath <ryanh@mellanox.com>
 
 
 Thank you for your feedback.
+
+
+
+
+Change log
+
+1.57 (date: 5-18-2011)
+- bug fixes
+- removed text generation (was incomplete and not maintained)
+=====================================================================================================================
+1.56
+- bug fixes
+- improve HTMP area
+- added many IB topology related information snapshot
+=====================================================================================================================
+1.24 
+  - More files... to files section /proc/net/dev_mcast /proc/net/bonding/* /sys/class/net/*
+=====================================================================================================================
+
+1.22
+  - more commands: ip a s, ip m s, ip n s and files, etc/isse, /proc/net/sdp. 
+
+=====================================================================================================================
+1.18
+  - added Infiniband switches scan to show switches properties (revision, firmware version, date, PSID, etc) 
+
+=====================================================================================================================
+
+1.04
+  - Added the '-t' flag for text only output, no HTML, requested by David Bahi
+  - Added index at the last HTML entry
+  - Read /etc/sysconfig/sysinfo-snapshot, if exists, for extra files and commands
+  - Added /var/log/messages to the files list
+  - Added mount and uptime commands to the commands list
+  - Sort the list of files and commands (in the columns and not along the rows)
+  - CGI autodetect CGI mode, generate HTML to standard output and not into file with the correct headers
+
+=====================================================================================================================
+
+Version 1.1 
+April, 14 2009
+Yair Ifergan
+
+
+  - added InfiniBand SM activity check: 
+  - added HW info to dump all network cards: hwinfo --netcard
+  - added files  /etc/hosts.allow 
+                 /etc/hosts.deny
+  - added following netstat calls:
+	netstat -nlp
+	netstat -nr
+	netstat -i
+  - added IPtables rules list:
+	iptables -t filter -nvL
+	iptables-save -t filter
+	iptables -t nat -nvL
+	iptables-save -t nat
+	iptables -t mangle -nvL
+	iptables-save -t mangle
