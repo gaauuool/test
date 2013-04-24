@@ -1,0 +1,14 @@
+This is the README file for sysinfo-snapshot
+
+The sysinfo-snapshot command generates a system information snapshot in HTML or text.
+From command line it will generate the report into file and print out the file name.
+
+The command cgi-bin and generate the system report directly to your browser.
+
+It is a simple bash script customizable, just add your commands or files to the lists and
+they will be part of your next report.
+
+Please send suggestion and updates to Yair Ifergan <yairi@voltaire.com>
+
+
+Thank you for your feedback.
